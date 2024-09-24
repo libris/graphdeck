@@ -1,0 +1,298 @@
+body {
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  --border: #aaa;
+  --databox: #eee;
+  font-family: sans-serif;
+  font-size: 0.6rem;
+}
+
+body {
+  scrollbar-color: var(--border) var(--databox);
+}
+body ::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+}
+body ::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+}
+body ::-webkit-scrollbar-track {
+  background-color: var(--databox);
+}
+
+main {
+}
+
+section {
+  /*overflow: auto;*/
+  margin: 0.1rem;
+}
+
+.multibroader {
+  border-radius: 0.3em;
+  /* border: 1px dashed #ccc; */
+  box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.2);
+  margin: 0.1rem;
+}
+
+.multibroader.parent {
+  /* border: 1px solid #ccc; */
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+section > div > .multibroader > b {
+  opacity: 0.4;
+}
+
+section > div > .multibroader > b:hover {
+  opacity: initial;
+}
+
+section > div > div div.multibroader.parent {
+  position: relative;
+  height: 1.6em;
+  background-color: #fff;
+  border-bottom: none;
+}
+
+/*
+section > div > div div.multibroader.parent:hover {
+  border-bottom: none;
+  overflow: initial;
+}
+section > div > div div.multibroader.parent > p {
+  position: absolute;
+  pointer-events: none;
+  background-color: #fff;
+  margin-top: 1.6em;
+  border: 1px solid #ccc;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+section > div > div div.multibroader.parent:hover > b,
+section > div > div div.multibroader.parent:hover > p {
+  position: absolute;
+  border-top: none;
+  visibility: visible;
+  pointer-events: initial;
+  opacity: 1;
+}
+*/
+
+/*
+.multibroader > div {
+  max-height: 0.1em;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in;
+}
+.multibroader:hover > div {
+  max-height: 4em;
+}
+*/
+
+.targeted {
+  outline: 0.6em solid #e3e;
+}
+
+article {
+  margin: 0.3rem;
+  /*overflow: auto;*/
+}
+
+main > article > section {
+  background-color: #fff;
+  float: left;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 0.3em;
+  margin: 0.3rem;
+  /*
+  max-height: 98vh;
+  overflow-y: auto;
+  */
+}
+
+div {
+  padding: 0.2rem 0;
+  text-align: left;
+  margin: 0.0em 0.2em;
+}
+section > div > div div {
+  margin-left:  1.8em !important;
+}
+
+.node {
+  position: relative;
+}
+
+.closetoggle, .widetoggle {
+  display: inline-block;
+  background-color: #eee;
+  padding: 0 0.2em;
+  border: 1px outset;
+  border-radius: 4px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.closetoggle {
+  top: 1em;
+  left: -1.1em;
+}
+.widetoggle {
+  top: 0em;
+  right: 0em;
+}
+
+.closed .closetoggle,
+.wide .widetoggle {
+  border: 1px inset;
+}
+
+.node:hover {
+  outline: 1px dashed #ccc;
+}
+
+.node.wide {
+  min-width: 58vw;
+  max-width: 61vw;
+  text-align: center;
+  overflow: visible;
+}
+.node.wide > p > .node {
+  float: left;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.node.closed {
+  box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.2);
+}
+.node.closed > p {
+  max-height: 0em;
+  overflow: hidden;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.node > b, aside > b {
+  display: inline-block;
+  border-radius: 2em;
+  padding: 0.67em 1.34em;
+  margin: 0.1em 0.3em;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  background: #dadfda;
+}
+b > a {
+  color: unset;
+  text-decoration: none;
+}
+
+.node > b {
+  position: relative;
+}
+
+.node > b > aside {
+  position: absolute;
+  z-index: 10;
+  top: 0.2em;
+  left: 100%;
+  background-color: rgba(221, 221, 221, 0.4);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  padding: 0 0.2rem;
+  transition: padding 0.2s ease-in-out;
+}
+.node > b:hover > aside {
+  padding: 0.2rem;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+}
+
+.node > b > aside > b {
+  background: #cf9;
+  font-size: 0.2rem;
+  max-width: 0em;
+  overflow: hidden;
+  transition-property: font-size, width;
+  transition: 0.2s ease-in-out;
+}
+.node > b:hover > aside > b {
+  max-width: 20rem;
+  overflow: visible;
+  font-size: 0.6rem;
+}
+
+.node > b > aside > b * {
+  display: none;
+}
+.node > b:hover > aside > b * {
+  display: initial;
+}
+
+.node > b:hover > aside > b i {
+  font-weight: lighter;
+}
+
+.node > b:hover > aside {
+  visibility: visible;
+}
+
+.node > .count {
+  margin-left: 2em;
+}
+
+.cardbox {
+  position: absolute;
+  visibility: hidden;
+  z-index: 30;
+  top: 0.2em;
+  left: 100%;
+  background-color: rgba(221, 221, 221);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 0.5em;
+  padding: 0 0.2rem;
+  max-height: 96vh;
+  min-width: 20em;
+  overflow: auto;
+}
+
+.AbstractAspect > b:after,
+.VividAspect > b:after,
+.WarmAspect > b:after,
+.InformativeAspect > b:after {
+  content: "";
+  display: inline-block;
+  border-radius: 100%;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+  margin-left: 0.7em;
+  vertical-align: middle;
+  width: 0.7em;
+  height: 0.7em;
+}
+
+.Abstract > b,
+.owl\:Class > b,
+.AbstractAspect > b:after { background: #bbf; }
+
+.Vivid > b { background: #afa; }
+
+.Light > b { background: #ff7; }
+
+.Warm > b { background: #fa6; }
+
+.Informative > b,
+.InformativeAspect > b:after { background: #edc; }
+
+.Pale > b { background: #dd9; }
+
+.Mixed > b,
+.Vivid.Abstract > b {
+  background: repeating-linear-gradient(45deg, #bbf, #bbf 10px, #afa 10px, #afa 20px);
+}

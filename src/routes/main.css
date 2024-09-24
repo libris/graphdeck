@@ -1,0 +1,9 @@
+nav > ul {
+  display: flex;
+}
+
+nav > ul > li {
+  border: 1px solid #ccc;
+  display: block;
+  padding: 0.2em 0.5em;
+}
