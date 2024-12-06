@@ -2,7 +2,7 @@
   import { base } from '$app/paths'
   import { page } from '$app/stores'
 
-  import {GRAPH} from '$lib/ld.js'
+  import { GRAPH } from '$lib/ld.js'
 
   import './main.css';
 
@@ -11,8 +11,7 @@
   $: urlParams = $page.url.search
 
 </script>
-
-<div class="app">
+<header>
   <nav>
     <ul>
       <li> <a href="{base}/{urlParams}">Data</a> </li>
@@ -20,14 +19,21 @@
       <li> <a href="{base}/trees{urlParams}">Trees</a> </li>
     </ul>
   </nav>
+</header>
+  
+<div class="app">
+
 
   <main>
     <slot />
   </main>
-
-  <footer>
-  </footer>
 </div>
-
+<footer>
+  <h1>Color guide</h1>
+  <ul>
+    <li>Grå - klass</li>
+    <li>Orange - form</li>
+  </ul>
+</footer>
 <style>
 </style>
