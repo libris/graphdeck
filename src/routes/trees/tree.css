@@ -275,6 +275,7 @@ b > a {
   vertical-align: middle;
   width: 0.7em;
   height: 0.7em;
+  background: #e3e;
 }
 
 .Abstract > b,
@@ -288,7 +289,7 @@ b > a {
 .Warm > b { background: #fa6; }
 
 .Informative > b,
-.InformativeAspect > b:after { background: #edc; }
+.InformativeAspect > b:after { background: #e3e; }
 
 .Pale > b { background: #dd9; }
 
