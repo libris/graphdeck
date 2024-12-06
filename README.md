@@ -4,7 +4,7 @@
 
 Serve data files from other directory:
 ```bash
-$ env DECK_DATA=$HOME/Documents/work/KB/repos/tangledtrees npm run dev
+$ env GRAPHDECK_ASSETS=/path/to/folder-containing-a-data-folder npm run dev
 ```
 
 ## Deployment
